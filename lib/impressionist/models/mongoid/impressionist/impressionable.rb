@@ -4,7 +4,7 @@ module Impressionist
 
     module ClassMethods
       def is_impressionable(options={})
-      	has_many :impressions, as: :impressionable, dependent: :destroy
+      	embeds_many :impressions, as: :impressionable
         	@impressionist_cache_options = options[:counter_cache]
         	if !@impressionist_cache_options.nil?
         		opts = impressionist_counter_cache_options
